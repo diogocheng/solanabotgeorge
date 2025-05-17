@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "georgebot", "georgebot", "{E5AA79DA-6798-AE61-DD2C-899B996D2E0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapp", "webapp", "{F5A57A33-CA88-2E80-470C-B0B9F74375F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolanaTokenDashboard", "georgebot\webapp\SolanaTokenDashboard\SolanaTokenDashboard.csproj", "{3182DB87-45B3-F543-1F82-808CCF9FC773}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3182DB87-45B3-F543-1F82-808CCF9FC773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3182DB87-45B3-F543-1F82-808CCF9FC773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3182DB87-45B3-F543-1F82-808CCF9FC773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3182DB87-45B3-F543-1F82-808CCF9FC773}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F5A57A33-CA88-2E80-470C-B0B9F74375F9} = {E5AA79DA-6798-AE61-DD2C-899B996D2E0E}
+		{3182DB87-45B3-F543-1F82-808CCF9FC773} = {F5A57A33-CA88-2E80-470C-B0B9F74375F9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E582A71B-D6CB-4FC7-AAD3-528A655F29EC}
+	EndGlobalSection
+EndGlobal

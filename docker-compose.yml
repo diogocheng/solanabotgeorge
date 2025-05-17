@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: ./georgebot/bot
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - TELEGRAM_BOT_TOKEN=8127502962:AAHP9nfYJNyoQplbAuNcRsbQNSDKBrsQ5j8
+      - TELEGRAM_CHAT_ID=-1002457519323
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+    volumes:
+      - bot_data:/app/data
+      - bot_config:/app/config
+    restart: unless-stopped
+    networks:
+      - georgebot_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  webapp:
+    build:
+      context: ./georgebot/webapp/SolanaTokenDashboard
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+      - BOT_API_URL=http://bot:8000
+    volumes:
+      - webapp_data:/app/data
+    depends_on:
+      bot:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - georgebot_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  georgebot_network:
+    driver: bridge
+
+volumes:
+  bot_data:
+  webapp_data:
+  bot_config: 

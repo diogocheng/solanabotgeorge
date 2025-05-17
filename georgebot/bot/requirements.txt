@@ -1,0 +1,11 @@
+requests
+python-dotenv
+python-telegram-bot
+schedule
+scikit-learn
+pandas
+fastapi
+uvicorn
+httpx
+solana
+aiohttp
